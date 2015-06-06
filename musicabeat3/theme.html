@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+
+<script>
+
+//DHTML Window script- Copyright Dynamic Drive (http://www.dynamicdrive.com)
+//For full source code, documentation, and terms of usage,
+//Visit http://www.dynamicdrive.com/dynamicindex9/dhtmlwindow.htm
+
+var dragapproved=false
+var minrestore=0
+var initialwidth,initialheight
+var ie5=document.all&&document.getElementById
+var ns6=document.getElementById&&!document.all
+
+function iecompattest(){
+return (!window.opera && document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function drag_drop(e){
+if (ie5&&dragapproved&&event.button==1){
+document.getElementById("dwindow").style.left=tempx+event.clientX-offsetx+"px"
+document.getElementById("dwindow").style.top=tempy+event.clientY-offsety+"px"
+}
+else if (ns6&&dragapproved){
+document.getElementById("dwindow").style.left=tempx+e.clientX-offsetx+"px"
+document.getElementById("dwindow").style.top=tempy+e.clientY-offsety+"px"
+}
+}
+
+function initializedrag(e){
+offsetx=ie5? event.clientX : e.clientX
+offsety=ie5? event.clientY : e.clientY
+document.getElementById("dwindowcontent").style.display="none" //extra
+tempx=parseInt(document.getElementById("dwindow").style.left)
+tempy=parseInt(document.getElementById("dwindow").style.top)
+
+dragapproved=true
+document.getElementById("dwindow").onmousemove=drag_drop
+}
+
+function loadwindow(url,width,height){
+if (!ie5&&!ns6)
+window.open(url,"","width=width,height=height,scrollbars=1")
+else{
+document.getElementById("dwindow").style.display=''
+document.getElementById("dwindow").style.width=initialwidth=width+"px"
+document.getElementById("dwindow").style.height=initialheight=height+"px"
+document.getElementById("dwindow").style.left="30px"
+document.getElementById("dwindow").style.top=ns6? window.pageYOffset*1+30+"px" : iecompattest().scrollTop*1+30+"px"
+document.getElementById("cframe").src=url
+}
+}
+
+function maximize(){
+if (minrestore==0){
+minrestore=1 //maximize window
+document.getElementById("maxname").setAttribute("src","<{$xoops_url}>/themes/musicabeat3/images/restore.gif")
+document.getElementById("dwindow").style.width=ns6? window.innerWidth-20+"px" : iecompattest().clientWidth+"px"
+document.getElementById("dwindow").style.height=ns6? window.innerHeight-20+"px" : iecompattest().clientHeight+"px"
+}
+else{
+minrestore=0 //restore window
+document.getElementById("maxname").setAttribute("src","<{$xoops_url}>/themes/musicabeat3/images/max.gif")
+document.getElementById("dwindow").style.width=initialwidth
+document.getElementById("dwindow").style.height=initialheight
+}
+document.getElementById("dwindow").style.left=ns6? window.pageXOffset+"px" : iecompattest().scrollLeft+"px"
+document.getElementById("dwindow").style.top=ns6? window.pageYOffset+"px" : iecompattest().scrollTop+"px"
+}
+
+function closeit(){
+document.getElementById("dwindow").style.display="none"
+}
+
+function stopdrag(){
+dragapproved=false;
+document.getElementById("dwindow").onmousemove=null;
+document.getElementById("dwindowcontent").style.display="" //extra
+}
+
+</script>
+<div id="dwindow" style="position:absolute;background-color:#EBEBEB;cursor:hand;left:0px;top:0px;display:none" onMousedown="initializedrag(event)" onMouseup="stopdrag()" onSelectStart="return false">
+<div align="right" style="background-color:navy"><img src="<{$xoops_url}>/themes/musicabeat3/images/max.gif" id="maxname" onClick="maximize()"><img src="<{$xoops_url}>/themes/musicabeat3/images/close.gif" onClick="closeit()"></div>
+<div id="dwindowcontent" style="height:100%">
+<iframe id="cframe" src="" width=100% height=100%></iframe>
+</div>
+</div>
+</head>
+<body>
+<table width="100%" height="25" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th scope="col" background="<{$xoops_url}>/themes/musicabeat3/images/bgsubheader.jpg" id="menuencabezado">&nbsp;&nbsp;<a href="<{$xoops_url}>/modules/AMS/index.php?storytopic=1">Agendas</a>
+|&nbsp;&nbsp; <a href="<{$xoops_url}>/modules/AMS/index.php?storytopic=2">Biografias
+|&nbsp;&nbsp; <a href="<{$xoops_url}>/modules/AMS/index.php?storytopic=3">Entrevistas
+|&nbsp;&nbsp; <a href="<{$xoops_url}>/modules/AMS/index.php?storytopic=4">Noticias
+|&nbsp;&nbsp; <a href="<{$xoops_url}>/modules/AMS/index.php?storytopic=5">Parties
+|&nbsp;&nbsp; <a href="<{$xoops_url}>/modules/AMS/index.php?storytopic=6">Reseñas
+|&nbsp;&nbsp; <a href="<{$xoops_url}>/modules/AMS/index.php?storytopic=13">Charts
+|&nbsp;&nbsp; <a href="<{$xoops_url}>/modules/AMS/index.php?storytopic=14">Opinion
+|&nbsp;&nbsp; <a href="<{$xoops_url}>/modules/AMS/index.php?storytopic=11">Fashion
+|&nbsp;&nbsp; <a href="<{$xoops_url}>/modules/AMS/index.php?storytopic=12">Misc</th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0"  cellspacing="0" bgcolor="#000000" background="<{$xoops_url}>/themes/musicabeat3/images/bgheader.gif" class="logocabeza">
+            <tr>
+              <td width="312"> <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="312" height="100">
+                <param name="movie" value="<{$xoops_url}>/themes/musicabeat3/flash/logo.swf" />
+                <param name="quality" value="high" />
+                <embed src="<{$xoops_url}>/themes/musicabeat3/flash/logo.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="312" height="100"></embed>
+              </object>           	  </td>
+              <td align="right" bgcolor="#000000" background="<{$xoops_url}>/themes/musicabeat3/images/bgheader.gif">
+                           
+                  <form action="<{$xoops_url}>/search.php" method="get">
+                    <p>&nbsp;</p><input name="query" size="28" type="text" />
+                    <input name="action" value="results" type="hidden" />
+                    <input name="submit" type="submit" value="Buscar" /> <br> <a href="<{$xoops_url}>/search.php">B&uacute;squeda Avanzada</a>
+                  </form> 
+              </td>
+              <td align="right" bgcolor="#000000" background="<{$xoops_url}>/themes/musicabeat3/images/bgheader.gif">&nbsp;</td>
+            </tr>
+</table>
+<table width="974" border="0" align="center" cellspacing="0" cellpadding="0" id="tablecentral2">
+  <tr>
+    <td width="239"><table width="100%" border="0" cellspacing="5" cellpadding="5">
+  <tr>
+    <td><{if $xoops_isuser}>
+			<a href="<{$xoops_url}>/user.php">Mostrar Cuenta</a> |
+			<a href="<{$xoops_url}>/edituser.php">Editar Cuenta</a> |
+			<a href="<{$xoops_url}>/notifications.php">Notificaciones</a> |
+			<{php}>
+			GLOBAL $xoopsUser;
+			$pm_handler =& xoops_gethandler('privmessage');
+			$uid = $xoopsUser->getVar('uid');
+			$criteria = new CriteriaCompo(new Criteria('read_msg', 0));
+			$criteria->add(new Criteria('to_userid', $uid));
+			$msgcount = $pm_handler->getCount($criteria);
+			$GLOBALS['xoopsTpl']->assign('msgcount', $msgcount);
+			<{/php}>
+				<{if $msgcount > 0}>
+				<a class="highlight" href="<{$xoops_url}>/viewpmsg.php">Bandeja de Entrada (<span style="color:#ffff00; font-weight: bold;"><{$msgcount}></span>)</a> |
+				<{else}>
+				<a href="<{$xoops_url}>/viewpmsg.php">Bandeja de Entrada</a> |
+				<{/if}>
+			<{if $xoops_isadmin}>
+			<a href="<{$xoops_url}>/admin.php">Administración</a> |
+			<{/if}>
+		<a href="<{$xoops_url}>/user.php?op=logout">Desconectarse</a>
+		<{else}>
+<form action="<{$xoops_url}>/user.php" method="post">
+    Nombre:
+    <input type="text" name="uname" size="12" value="<{$block.unamevalue}>" maxlength="25">
+    <br />
+    Contraseña: 
+    <input type="password" name="pass" size="12" maxlength="32">
+    <!-- <input type="checkbox" name="rememberme" value="On" class ="formButton" /><{$block.lang_rememberme}><br /> //-->
+    <input type="hidden" name="xoops_redirect" value="<{$xoops_requesturi}>">
+    <input type="hidden" name="op" value="login">
+    <input  id="UserFormBut" type="submit" value="Entrar">
+    <{$block.sslloginlink}><a href="<{$xoops_url}>/user.php#lost">¿Recuperar Contraseña? 
+</a> |
+	<a href="<{$xoops_url}>/register.php">¡Regístrese Ahora!</a>
+</form>		
+		<{/if}>  </td>
+  </tr>
+</table>
+</td>
+    <td width="735" align="center"><script language='JavaScript' type='text/javascript' src='http://adversiting.musicabeat.com/adx.js'></script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+   
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://adversiting.musicabeat.com/adjs.php?n=" + phpAds_random);
+   document.write ("&amp;clientid=3");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   if (document.referrer)
+      document.write ("&amp;referer=" + escape(document.referrer));
+   document.write ("'><" + "/script>");
+//-->
+</script><noscript><a href='http://adversiting.musicabeat.com/adclick.php?n=ad1cf12b' target='_blank'><img src='http://adversiting.musicabeat.com/adview.php?clientid=3&amp;n=ad1cf12b' border='0' alt=''></a></noscript>
+</td>
+  </tr>
+</table>
+<table width="974" border="0" align="center" cellpadding="0" cellspacing="0" id="tablecentral">
+  <tr>
+    <td id="leftcolumn"> 
+          <{foreach item=block from=$xoops_lblocks}> <div class="<{cycle values="blockTitle"}>"><{$block.title}></div>
+          <div class="blockContent"><{$block.content}></div>
+		  <img src="<{$xoops_imageurl}>images/spacer2.gif" width="130" height="1" alt=""></img>
+          <{/foreach}> 
+          <!-- End left blocks loop -->
+          <br /> <br />          </td>
+    <td id="centercolumn"> 
+          <!-- Display center blocks if any -->
+		  <{if $xoops_showcblock == 1}>
+        <table cellspacing="0" class="cbl">
+		<tr>
+			<td id="centerCcolumn" colspan="2">
+			<!-- Start center-center blocks loop -->
+			<{foreach item=block from=$xoops_ccblocks}>
+				<div style="padding: 2px;" class="ccb" >
+    <div class="blockTitle"><{$block.title}></div>
+    <div class="blockContent"><{$block.content}></div>
+</div> 
+			<{/foreach}>
+			<!-- End center-center blocks loop -->			</td>
+		</tr>
+		<tr>
+			<td id="centerLcolumn">		
+			<!-- Start center-left blocks loop -->
+			<{foreach item=block from=$xoops_clblocks}>
+				<div style="padding: 0px 0px 0px 2px;" class="ccb" >
+    <div class="blockTitle"><{$block.title}></div>
+    <div class="blockContent"><{$block.content}></div>
+</div> 
+			<{/foreach}>
+			<!-- End center-left blocks loop -->			</td>
+			<td id="centerRcolumn">		
+			<!-- Start center-right blocks loop -->
+			<{foreach item=block from=$xoops_crblocks}>
+				<div style="padding: 0px 2px 0px 0px;" class="ccb" >
+    <div class="blockTitle"><{$block.title}></div>
+    <div class="blockContent"><{$block.content}></div>
+</div> 
+			<{/foreach}>
+			<!-- End center-right blocks loop -->			</td>
+		</tr>
+        </table>
+        <{/if}>
+        <!-- End display center blocks -->
+        <div id="content">
+          <{$xoops_contents}>        </div>
+        <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright or $xoBlocks.page_bottomcenter}>
+        <table cellspacing="0" class="cbl">
+        <{if $xoBlocks.page_bottomcenter}>
+		<tr><td id="bottomCcolumn" colspan="2">
+			<{foreach from=$xoBlocks.page_bottomcenter item=block}><div style="padding: 2px;" class="ccb" >
+    <div class="blockTitle"><{$block.title}></div>
+    <div class="blockContent"><{$block.content}></div>
+</div> <{/foreach}>
+			</td>
+		</tr>
+		<{/if}>
+		<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright}>
+		<tr>
+			<td id="bottomLcolumn">
+				<{foreach from=$xoBlocks.page_bottomleft item=block}><div style="padding: 0px 0px 0px 2px;" class="ccb" >
+    <div class="blockTitle"><{$block.title}></div>
+    <div class="blockContent"><{$block.content}></div>
+</div> <{/foreach}>			</td>
+			<td id="bottomRcolumn">
+				<{foreach from=$xoBlocks.page_bottomright item=block}><{include file="default/theme_blockcenter_r.html"}><{/foreach}>			</td>
+		</tr>
+        <{/if}>
+        </table>
+        <{/if}> 
+          <!-- End display center blocks -->    </td>
+    <{if $xoops_showrblock == 1}> 
+        <td id="rightcolumn"> 
+          <!-- Start right blocks loop -->
+		  <script language='JavaScript' type='text/javascript' src='http://adversiting.musicabeat.com/adx.js'></script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+   
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://adversiting.musicabeat.com/adjs.php?n=" + phpAds_random);
+   document.write ("&amp;clientid=2");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   if (document.referrer)
+      document.write ("&amp;referer=" + escape(document.referrer));
+   document.write ("'><" + "/script>");
+//-->
+</script><noscript><a href='http://adversiting.musicabeat.com/adclick.php?n=a896b99d' target='_blank'><img src='http://adversiting.musicabeat.com/adview.php?clientid=2&amp;n=a896b99d' border='0' alt=''></a></noscript>
+
+          <{foreach item=block from=$xoops_rblocks}> <div class="<{cycle values="blockTitle,blockTitle"}>"><{$block.title}></div>
+          <div class="blockContent"><{$block.content}></div>
+		  <img src="<{$xoops_imageurl}>images/spacer2.gif" width="200" height="1" alt=""></img>
+          <{/foreach}> 
+          <!-- End right blocks loop -->
+          <br /> <br /> </td>
+        <{/if}>
+  </tr>
+</table>
+<table width="758"  border="0" align="center" cellpadding="0" cellspacing="0" class="Foot">
+  <tr>
+    <td><div class="footer">
+<br />
+<br />
+
+<{$xoops_footer}><br />
+<br />
+</div></td>
+  </tr>
+</table>
+</body>
+</html>

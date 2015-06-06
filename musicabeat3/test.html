@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+
+<script>
+
+//DHTML Window script- Copyright Dynamic Drive (http://www.dynamicdrive.com)
+//For full source code, documentation, and terms of usage,
+//Visit http://www.dynamicdrive.com/dynamicindex9/dhtmlwindow.htm
+
+var dragapproved=false
+var minrestore=0
+var initialwidth,initialheight
+var ie5=document.all&&document.getElementById
+var ns6=document.getElementById&&!document.all
+
+function iecompattest(){
+return (!window.opera && document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function drag_drop(e){
+if (ie5&&dragapproved&&event.button==1){
+document.getElementById("dwindow").style.left=tempx+event.clientX-offsetx+"px"
+document.getElementById("dwindow").style.top=tempy+event.clientY-offsety+"px"
+}
+else if (ns6&&dragapproved){
+document.getElementById("dwindow").style.left=tempx+e.clientX-offsetx+"px"
+document.getElementById("dwindow").style.top=tempy+e.clientY-offsety+"px"
+}
+}
+
+function initializedrag(e){
+offsetx=ie5? event.clientX : e.clientX
+offsety=ie5? event.clientY : e.clientY
+document.getElementById("dwindowcontent").style.display="none" //extra
+tempx=parseInt(document.getElementById("dwindow").style.left)
+tempy=parseInt(document.getElementById("dwindow").style.top)
+
+dragapproved=true
+document.getElementById("dwindow").onmousemove=drag_drop
+}
+
+function loadwindow(url,width,height){
+if (!ie5&&!ns6)
+window.open(url,"","width=width,height=height,scrollbars=1")
+else{
+document.getElementById("dwindow").style.display=''
+document.getElementById("dwindow").style.width=initialwidth=width+"px"
+document.getElementById("dwindow").style.height=initialheight=height+"px"
+document.getElementById("dwindow").style.left="30px"
+document.getElementById("dwindow").style.top=ns6? window.pageYOffset*1+30+"px" : iecompattest().scrollTop*1+30+"px"
+document.getElementById("cframe").src=url
+}
+}
+
+function maximize(){
+if (minrestore==0){
+minrestore=1 //maximize window
+document.getElementById("maxname").setAttribute("src","<{$xoops_url}>/themes/musicabeat2/images/restore.gif")
+document.getElementById("dwindow").style.width=ns6? window.innerWidth-20+"px" : iecompattest().clientWidth+"px"
+document.getElementById("dwindow").style.height=ns6? window.innerHeight-20+"px" : iecompattest().clientHeight+"px"
+}
+else{
+minrestore=0 //restore window
+document.getElementById("maxname").setAttribute("src","<{$xoops_url}>/themes/musicabeat2/images/max.gif")
+document.getElementById("dwindow").style.width=initialwidth
+document.getElementById("dwindow").style.height=initialheight
+}
+document.getElementById("dwindow").style.left=ns6? window.pageXOffset+"px" : iecompattest().scrollLeft+"px"
+document.getElementById("dwindow").style.top=ns6? window.pageYOffset+"px" : iecompattest().scrollTop+"px"
+}
+
+function closeit(){
+document.getElementById("dwindow").style.display="none"
+}
+
+function stopdrag(){
+dragapproved=false;
+document.getElementById("dwindow").onmousemove=null;
+document.getElementById("dwindowcontent").style.display="" //extra
+}
+
+</script>
+<div id="dwindow" style="position:absolute;background-color:#EBEBEB;cursor:hand;left:0px;top:0px;display:none" onMousedown="initializedrag(event)" onMouseup="stopdrag()" onSelectStart="return false">
+<div align="right" style="background-color:navy"><img src="<{$xoops_url}>/themes/musicabeat2/images/max.gif" id="maxname" onClick="maximize()"><img src="<{$xoops_url}>/themes/musicabeat2/images/close.gif" onClick="closeit()"></div>
+<div id="dwindowcontent" style="height:100%">
+<iframe id="cframe" src="" width=100% height=100%></iframe>
+</div>
+</div>
+</head>
+<body>
+<table width="100%" cellpadding="0"  cellspacing="0" bgcolor="#000000" background="http://www.musicabeat.com/themes/musicabeat2/images/bgheader.gif">
+            <tr>
+              <td width="312"> <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="312" height="100">
+                <param name="movie" value="<{$xoops_url}>/themes/musicabeat2/flash/logo.swf" />
+                <param name="quality" value="high" />
+                <embed src="<{$xoops_url}>/themes/musicabeat2/flash/logo.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="312" height="100"></embed>
+              </object> 
+           	  </td>
+              <td align="center" bgcolor="#000000">
+<p>
+</td>
+              <!-- <td width="250" class="HeaderLogo"><div align="right"><img src="<{$xoops_url}>/themes/musicabeat2/menuimage.jpg" width="250" height="233" border="0" usemap="#Map" /></div></td> -->
+            </tr>
+<!-- 			  <tr>
+              <td height="1" bgcolor="#FFFFFF"></td>
+			  <td width="250" bgcolor="#FFFFFF"></td>
+			  </tr> -->
+</table>
+<table width="100%" height="25" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th scope="col" background="http://www.musicabeat.com/themes/musicabeat2/images/bgsubheader.jpg" id="menuencabezado">&nbsp;&nbsp;<a href="http://www.musicabeat.com">Inicio</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://www.musicabeat.com/modules/AMS/">Articulos</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://www.musicabeat.com/modules/wordpress/">Booking</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://www.musicabeat.com/modules/catads/">Clasificados</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://www.musicabeat.com/modules/newbb/">Foro</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://www.musicabeat.com/modules/extcal/">Eventos</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://www.musicabeat.com/modules/weblinks/">Links</a></th>
+  </tr>
+</table>
+
+</td>
+</tr>
+</table>
+<!-- <map name="Map" id="Map">
+  <area shape="rect" coords="4,2,122,57" href="http://www.musicabeat.com" />
+  <area shape="rect" coords="4,59,121,113" href="http://www.musicabeat.com/modules/news/" />
+  <area shape="rect" coords="4,114,121,171" href="http://www.musicabeat.com/modules/debaser/" />
+  <area shape="rect" coords="4,173,121,231" href="http://www.musicabeat.com/modules/googlemaps/" />
+  <area shape="rect" coords="128,2,245,56" href="http://www.musicabeat.com/modules/newbb/" />
+  <area shape="rect" coords="128,57,245,114" href="http://www.musicabeat.com/modules/extcal/" />
+  <area shape="rect" coords="128,115,245,172" href="http://www.musicabeat.com/modules/catads/" />
+  <area shape="rect" coords="128,174,246,232" href="http://www.musicabeat.com/modules/xoopsfaq/" />
+</map> -->
+<table width="0" border="0">
+  <tr>
+    <td colspan="2"><br><img src="http://www.musicabeat.com/themes/musicabeat2/images/publicidadbottom.gif" width="60" height="10" />
+	<table width="748" height="110" border="1" align="center" bordercolor="#000000" id="Musicabanner">
+  <tr>
+    <td valign="middle" align="center" id="Musicabanner">   <{$xoops_banner}></td>
+  </tr>
+</table></td>
+    <{if $xoops_showrblock == 1}> 
+        <td id="rightcolumn" rowspan="2" > 
+          <!-- Start right blocks loop -->
+          <{foreach item=block from=$xoops_rblocks}> <div class="<{cycle values="blockTitle,blockTitle"}>"><{$block.title}></div>
+          <div class="blockContent"><{$block.content}></div>
+		  <img src="<{$xoops_imageurl}>images/spacer2.gif" width="150" height="1" alt=""></img>
+          <{/foreach}> 
+          <!-- End right blocks loop -->
+          <br /> <br /> </td>
+        <{/if}>
+  </tr>
+  <tr>
+    <td id="leftcolumn"> 
+          <{foreach item=block from=$xoops_lblocks}> <div class="<{cycle values="blockTitle"}>"><{$block.title}></div>
+          <div class="blockContent"><{$block.content}></div>
+		  <img src="<{$xoops_imageurl}>images/spacer2.gif" width="160" height="1" alt=""></img>
+          <{/foreach}> 
+          <!-- End left blocks loop -->
+          <br /> <br />          </td>
+    <td id="centercolumn"> 
+          <!-- Display center blocks if any -->
+		  <{if $xoops_showcblock == 1}>
+        <table cellspacing="0" class="cbl">
+		<tr>
+			<td id="centerCcolumn" colspan="2">
+			<!-- Start center-center blocks loop -->
+			<{foreach item=block from=$xoops_ccblocks}>
+				<div style="padding: 2px;" class="ccb" >
+    <div class="blockTitle"><{$block.title}></div>
+    <div class="blockContent"><{$block.content}></div>
+</div> 
+			<{/foreach}>
+			<!-- End center-center blocks loop -->			</td>
+		</tr>
+		<tr>
+			<td id="centerLcolumn">		
+			<!-- Start center-left blocks loop -->
+			<{foreach item=block from=$xoops_clblocks}>
+				<div style="padding: 0px 0px 0px 2px;" class="ccb" >
+    <div class="blockTitle"><{$block.title}></div>
+    <div class="blockContent"><{$block.content}></div>
+</div> 
+			<{/foreach}>
+			<!-- End center-left blocks loop -->			</td>
+			<td id="centerRcolumn">		
+			<!-- Start center-right blocks loop -->
+			<{foreach item=block from=$xoops_crblocks}>
+				<div style="padding: 0px 2px 0px 0px;" class="ccb" >
+    <div class="blockTitle"><{$block.title}></div>
+    <div class="blockContent"><{$block.content}></div>
+</div> 
+			<{/foreach}>
+			<!-- End center-right blocks loop -->			</td>
+		</tr>
+        </table>
+        <{/if}>
+        <!-- End display center blocks -->
+        <div id="content">
+          <{$xoops_contents}>        </div>
+        <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright or $xoBlocks.page_bottomcenter}>
+        <table cellspacing="0" class="cbl">
+        <{if $xoBlocks.page_bottomcenter}>
+		<tr><td id="bottomCcolumn" colspan="2">
+			<{foreach from=$xoBlocks.page_bottomcenter item=block}><div style="padding: 2px;" class="ccb" >
+    <div class="blockTitle"><{$block.title}></div>
+    <div class="blockContent"><{$block.content}></div>
+</div> <{/foreach}>
+			</td>
+		</tr>
+		<{/if}>
+		<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright}>
+		<tr>
+			<td id="bottomLcolumn">
+				<{foreach from=$xoBlocks.page_bottomleft item=block}><div style="padding: 0px 0px 0px 2px;" class="ccb" >
+    <div class="blockTitle"><{$block.title}></div>
+    <div class="blockContent"><{$block.content}></div>
+</div> <{/foreach}>			</td>
+			<td id="bottomRcolumn">
+				<{foreach from=$xoBlocks.page_bottomright item=block}><{include file="default/theme_blockcenter_r.html"}><{/foreach}>			</td>
+		</tr>
+        <{/if}>
+        </table>
+        <{/if}> 
+          <!-- End display center blocks -->    </td>
+  </tr>
+</table>
+</body>
+</html>
